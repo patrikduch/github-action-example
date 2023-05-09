@@ -42,13 +42,13 @@ jobs:
       - name: Create new workspace or switch to existing one
         run: |
           if terraform workspace list | grep -q " '${{ env.TF_VAR_appname_env }}'"; then
-            echo "Workspace '${{ env.TF_VAR_app_env }}' already exists. Switching to it."
+            echo "Workspace '${{ env.TF_VAR_appname_env }}' already exists. Switching to it."
             terraform workspace select ${{ env.TF_VAR_appname_env }}
           else
             echo "Workspace '${{ env.TF_VAR_appname_env }}' does not exist. Creating it."
             terraform workspace new ${{ env.TF_VAR_appname_env }}
           fi
-          
+
       - name: Terraform Validate
         run: |
           cd tf

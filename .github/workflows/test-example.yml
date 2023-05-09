@@ -31,14 +31,13 @@ jobs:
           terraform_version: 1.0.0 # specify the desired Terraform version
 
       - name: Terraform Init
-        run: terraform init
+        run: terraform init -chdir=tf
 
       - name: Terraform Validate
-        run: terraform validate
+        run: terraform validate -chdir=tf
 
       - name: Terraform Plan
-        run: terraform plan
-
+        run: terraform plan -chdir=tf
 
       # Runs a single command using the runners shell
       - name: Run a one-line script

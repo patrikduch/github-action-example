@@ -15,7 +15,7 @@ on:
 
 
 env:
-  TF_VAR_appname_env: 'test',
+  TF_VAR_appname_env: 'test'
   TF_VAR_author_env: 'Patrik Duch'
 
 

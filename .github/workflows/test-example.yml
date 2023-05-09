@@ -15,7 +15,8 @@ on:
 
 
 env:
-  TF_VAR_appname_env: 'test'
+  TF_VAR_appname_env: 'test',
+  TF_VAR_author_env: 'Patrik Duch'
 
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel

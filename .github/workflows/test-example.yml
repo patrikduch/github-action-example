@@ -34,10 +34,10 @@ jobs:
         run: |
           cd tf
           terraform init
-
       - name: Terraform Validate
-        run: terraform validate -chdir=tf
-
+        run: |
+          cd tf
+          terraform validate
       - name: Terraform Plan
         run: terraform plan -chdir=tf
 

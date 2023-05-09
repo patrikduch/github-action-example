@@ -29,7 +29,6 @@ jobs:
         uses: hashicorp/setup-terraform@v1
         with:
           terraform_version: 1.0.0 # specify the desired Terraform version
-
       - name: Terraform Init
         run: |
           cd tf
@@ -39,8 +38,9 @@ jobs:
           cd tf
           terraform validate
       - name: Terraform Plan
-        run: terraform plan -chdir=tf
-
+        run: |
+          cd tf
+          terraform plan
       # Runs a single command using the runners shell
       - name: Run a one-line script
         run: echo Hello, world!

@@ -31,7 +31,9 @@ jobs:
           terraform_version: 1.0.0 # specify the desired Terraform version
 
       - name: Terraform Init
-        run: terraform init -chdir=tf
+        run: |
+          cd tf
+          terraform init
 
       - name: Terraform Validate
         run: terraform validate -chdir=tf
